@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vbj-np-SbC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vbj-np-SbC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
@@ -36,11 +37,56 @@
                             <outlet property="delegate" destination="dNY-UJ-JDt" id="SH5-nR-KPc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cm4-o6-G3J"/>
+                    <navigationItem key="navigationItem" id="cm4-o6-G3J">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="X8D-zF-aH7">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="dNY-UJ-JDt" id="eRJ-Ou-RAE"/>
+                                <segue destination="TsW-rj-akB" kind="push" id="dkK-M5-2hE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKX-u5-qfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="707" y="140"/>
+        </scene>
+        <!--New Message-->
+        <scene sceneID="E7o-ne-iby">
+            <objects>
+                <viewController id="TsW-rj-akB" customClass="FISAddMessageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bB1-2b-rY6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vfr-63-c4X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qy5-Ss-UBy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tvc-EY-5jv">
+                                <rect key="frame" x="57" y="144" width="207" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1X-Ot-nGQ">
+                                <rect key="frame" x="137" y="210" width="46" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="TsW-rj-akB" eventType="touchUpInside" id="iP0-Am-289"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Message" id="bEq-0h-2gI"/>
+                    <connections>
+                        <outlet property="messageField" destination="Tvc-EY-5jv" id="y7E-SW-243"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBf-1z-0cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KXb-P8-rcA">
